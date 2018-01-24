@@ -7,6 +7,7 @@
 </head>
 <body>
    <?php
+    /* Kontrollerar att vi data finns */
     if (isset($_POST["tal1"]) && isset($_POST["tal2"])) {
         /* Ta emot data */
         $tal1 = $_POST["tal1"];

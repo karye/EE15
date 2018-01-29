@@ -1,9 +1,9 @@
 <?php
 /**
-* Ändra bakgrundsfärg via formulär
+* Omvandla celsius till farenheit.
 *
 * PHP version 5
-* @category   Formuläret
+* @category   Omräknare
 * @author     Karim Ryde <karye.webb@gmail.com>
 * @license    PHP CC
 * @link
@@ -13,29 +13,27 @@
 <html lang="sv">
 <head>
     <meta charset="utf-8">
-    <title>Ändra bakgrundsfärg - v2</title>
+    <title>Omvandla celsius till farenheit</title>
 </head>
 <?php
 
-/* Kontrollerar att vi data finns */
-if (isset($_POST["bg"])) {
+/* Kontrollerar att data finns */
+if (isset($_POST["temp"])) {
 
     /* Ta emot data */
-    $bg = $_POST["bg"];
+    $celsius = $_POST["temp"];
 
-    /* Ändra bakgrundsfärgen */
-    echo "<body style=\"background: $bg\">";
-} else {
-    echo "<body>";
+    /* Omvandla till Farenheit */
+    $farenheit = 9/5 * $celsius + 32;
+
+    /* Skriv ut svaret */
+    echo "$celsius&deg; Celsius motsvarar $farenheit&deg; Fahrenheit";
 }
 ?>
-    <form action="upg_2_3.php" method="post">
-        <label>Välj bakgrundsfärg</label>
-        <input type="radio" name="bg" value="red">Röd
-        <input type="radio" name="bg" value="blue">Blå
-        <input type="radio" name="bg" value="green">Grön
-        <input type="radio" name="bg" value="yellow">Gul<br>
-        <button>Måla bakgrund</button>
+    <form action="upg_2_4.php" method="post">
+        <label>Ange temperatur i Celsius</label>
+        <input type="number" name="temp" value="0"><br>
+        <button>Omvandla till Farenheit</button>
     </form>
 </body>
 </html>

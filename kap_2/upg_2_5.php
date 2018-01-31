@@ -15,8 +15,8 @@
     <meta charset="utf-8">
     <title>Omvandla mellan celsius och farenheit</title>
 </head>
+<body>
 <?php
-
 /* Kontrollerar att data finns */
 if (isset($_POST["temp"]) && isset($_POST["omvandla"])) {
 

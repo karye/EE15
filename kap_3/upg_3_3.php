@@ -27,6 +27,8 @@ if (isset($_POST["tal1"]) && isset($_POST["tal2"])) {
     /* Kontrollera att tal1 < tal2 */
     if ($tal1 < $tal2) {
         $svar = "";
+
+        /* Loopar igenom alla tal */
         for ($i = $tal1 + 1; $i < $tal2; $i++) {
             $svar = "$svar $i";
         }

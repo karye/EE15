@@ -23,8 +23,15 @@
         /* Skydd */
         $tecken = htmlspecialchars($tecken);
 
+        $manader = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november","december"];
+
+        $manad_index = date("n") - 1;
+        $dag_index = date("j");
+
         /* Sidan med alla horoskop */
-        $url = "https://www.metro.se/artikel/dagens-horoskop-5-februari";
+        $url = "https://www.metro.se/artikel/dagens-horoskop-$dag_index-$manader[$manad_index]";
+
+        echo $url;
 
         /* Hämta sidans innehåll */
         $sidan = file_get_contents($url);

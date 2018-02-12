@@ -26,7 +26,7 @@
         // Plocka ut post-variablerna
         $epost = $_POST["epost"];
 
-        if (preg_match("/^([a-z]+)\.([a-z]+)@\.com|\.se$/", $epost, $namn)) {
+        if (preg_match("/^([a-z]+)\.([a-z]+)@([a-z]+\.(se|com))$/", $epost, $namn)) {
             echo "<p>Det matchar!</p>";
 
             foreach ($namn as $match) {

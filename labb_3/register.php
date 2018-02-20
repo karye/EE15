@@ -34,10 +34,10 @@
 
         // Vi sparar ned användarnamn och lösenord i en textfil
         // Öppna textfilen "users.txt" för skrivning
-        $fil = fopen("users.txt") or die("<p>Kunde inte öppna fil</p>");
+        $fil = fopen("users.txt", 'a') or die("<p>Kunde inte öppna fil</p>");
 
         // Skapa hash av lösenordet med funktionen password_hash()
-        $hash = password_hash($hash, PASSWORD_DEFAULT);
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
 
         // Spara en ny rad med användarnamn och lösenord i formatet "user:hash"
         fwrite($fil, "$user:$hash\n");

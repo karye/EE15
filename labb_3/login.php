@@ -34,7 +34,7 @@
         $pass = strtolower($pass);
 
         // Läser in hela filen "users.txt" i en array med funktionen file()
-        $rader = file("users.txt");
+        $rader = file("users.txt", FILE_IGNORE_NEW_LINES);
 
         // Loopa igenom arrayen
         foreach ($rader as $rad) {
@@ -68,7 +68,7 @@
         </form>
         <?php
     } else {
-        echo "<h1>Du är nu inloggad!</h1>";
+        echo "<h1>$user, du är nu inloggad!</h1>";
     }
     ?>
 </body>

@@ -1,0 +1,24 @@
+/* Menyn utseende */
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: center;
+}
+li {
+    display: inline;
+    list-style-type: none;
+}
+li a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #ff9f00;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+li a:hover {
+    background: #ecd500;
+}
+li .current {
+    background: #b40900;
+}

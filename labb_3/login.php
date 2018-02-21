@@ -9,16 +9,23 @@
 * @link
 */
 ?>
+<?php
+session_start();
+
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <title>Logga in</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
-    // Flagga som registrerar om inloggad eller ej
-    $inloggad = false;
+    include 'menu.php';
 
     // Kontrollera först om det finns formulärdata annars visa inloggningsformuläret
     if (isset($_POST["user"]) && isset($_POST["pass"])) {
@@ -47,13 +54,14 @@
             // Kollar om inmatat användarnamn finns
             // och lösenordet stämmer med password_verify()
             if ($user == $namn && password_verify($pass, $hash)) {
-                $inloggad = true;
+                $_SESSION["loggedin"] = true;
+                header("Location: index.php");
             }
         }
     }
 
     // Om användaren inte är inloggad
-    if (!$inloggad) {
+    if (!$_SESSION["loggedin"]) {
 
         // Om obefintligt formulärdata
         if (isset($_POST["user"]) && isset($_POST["pass"])) {

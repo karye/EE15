@@ -9,14 +9,28 @@
 * @link
 */
 ?>
+<?php
+session_start();
+
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+
+if ($_SESSION["loggedin"]) {
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <title>Registrera användare</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
+    include 'menu.php';
+
     // Kolla att formulärdata finns annars visa formuläret med funktionen isset()
     if (isset($_POST["user"]) && isset($_POST["pass"])) {
 

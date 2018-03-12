@@ -14,8 +14,10 @@
 <head>
     <meta charset="utf-8">
     <title>Lista alla bilar</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
     <?php
@@ -60,8 +62,8 @@
             <td>{$row['reg']}</td>
             <td>{$row['marke']}</td>
             <td>{$row['modell']}</td>
-            <td><a href=\"aendra_bilar.php?reg={$row['reg']}\">Ändra</a></td>
-            <td><a href=\"radera_bilar.php?reg={$row['reg']}\">Radera</a></td>
+            <td><a href=\"aendra_bilar.php?reg={$row['reg']}\">Ändra <i class=\"fas fa-pencil-alt\"></i></a></td>
+            <td><a href=\"radera_bilar.php?reg={$row['reg']}\">Radera <i class=\"fas fa-trash-alt\"></i></span></a></td>
             </tr>";
     }
     echo "</table>";

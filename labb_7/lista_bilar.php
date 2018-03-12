@@ -19,7 +19,7 @@
 </head>
 <body>
     <?php
-    include 'config_db.php';
+    include '../../include/config_db_bilar.php';
 
     // Vi försöker öppna en anslutningen mot vår databas
     $conn = new mysqli($hostname, $user, $pass, $database);

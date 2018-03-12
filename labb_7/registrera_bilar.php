@@ -19,10 +19,15 @@
 </head>
 <body>
     <?php
-    include 'config_db.php';
+    include '../../include/config_db_bilar.php';
 
-    if () {
+    // Tar emot data från formulär och rensar bort oönskade taggar eller kod
+    $reg = filter_input(INPUT_POST, "reg", FILTER_SANITIZE_STRING);
+    $marke = filter_input(INPUT_POST, "marke", FILTER_SANITIZE_STRING);
+    $modell = filter_input(INPUT_POST, "modell", FILTER_SANITIZE_STRING);
 
+    // Om data finns skjut i databasen
+    if ($reg && $marke && $modell) {
 
         // Vi försöker öppna en anslutningen mot vår databas
         $conn = new mysqli($hostname, $user, $pass, $database);
@@ -36,14 +41,14 @@
 
         // Vårt sql-kommando
         $sql = "INSERT INTO bilar
-                ('reg', 'marke', 'modell') VALUES ($reg, $marke, $modell)";
+                (reg, marke, modell) VALUES ('$reg', '$marke', '$modell');";
 
         // Nu kör vi vår SQL
         $result = $conn->query($sql);
 
         // Gick det bra att köra SQL-kommandot?
         if (!$result) {
-            die($result->error);
+            die("<p>Det blev något fel i databasfrågan</p>");
         } else {
             echo "<p>Bilen är registrerad!</p>";
         }

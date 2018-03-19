@@ -1,0 +1,122 @@
+/* Enkel CSS-reset */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+/* Layoutens utseende */
+body {
+
+}
+.container {
+
+}
+/* Sidhuvudets utseende */
+header {
+
+}
+header h1 {
+
+}
+header h1 a {
+
+}
+/* Menyns utseende */
+header nav {
+
+}
+header nav ul {
+
+}
+header nav li {
+
+}
+header nav a {
+
+}
+/* Feature-delens utseende */
+main {
+
+}
+main .feature {
+
+}
+main .feature img {
+
+}
+main .feature h2 {
+
+}
+main .feature a {
+
+}
+/* Produkter-delens utseende */
+main .products {
+
+}
+main .products .range {
+
+}
+main .products h3 {
+
+}
+main .products .sun a {
+
+}
+main .products .sun a:hover {
+
+}
+main .products .sport a {
+
+}
+main .products .sport a:hover {
+
+}
+main .products .tech a {
+
+}
+main .products .tech a:hover {
+
+}
+main .products .special a {
+
+}
+main .products .special a:hover {
+
+}
+main .products p {
+
+}
+main .products a {
+
+}
+/* Sidfotens utseende */
+footer {
+
+}
+footer p {
+
+}
+footer nav {
+
+}
+footer nav ul {
+
+}
+footer nav li {
+
+}
+footer nav a {
+
+}
+footer a {
+
+}
+footer img {
+
+}

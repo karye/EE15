@@ -1,3 +1,6 @@
+/* Typsnitt */
+@import url('https://fonts.googleapis.com/css?family=Arimo|IBM+Plex+Sans:700');
+
 /* Enkel CSS-reset */
 html {
     box-sizing: border-box;
@@ -11,30 +14,47 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 /* Layoutens utseende */
 body {
-
+    background: #000 url("images/bg.gif");
 }
 .container {
-
+    font-family: 'Arimo', sans-serif;
+    color: #8c99a2;
+    width: 960px;
+    margin: auto;
+    background: #000;
+}
+.container a {
+    color: #01d2ff;
+    text-decoration: none;
 }
 /* Sidhuvudets utseende */
 header {
-
+    height: 115px;
 }
 header h1 {
-
+    text-indent: -9999px;
+    background: url("images/logo1.png");
+    width: 212px;
+    height: 45px;
+    float: left;
+    margin: 10px;
 }
 header h1 a {
 
 }
 /* Menyns utseende */
 header nav {
-
+    float: right;
 }
 header nav ul {
 
 }
 header nav li {
-
+    display: inline-block;
+    padding: 25px 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 header nav a {
 
@@ -44,32 +64,54 @@ main {
 
 }
 main .feature {
-
+    height: 385px;
+    padding-left: 90px;
+    box-shadow: 0 10px 40px #555, 0 -10px 40px #555;
 }
 main .feature img {
-
+    float: right;
 }
 main .feature h2 {
-
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    padding-top: 80px;
+}
+main .feature p {
+    margin: 20px 0 50px 0;
+    width: 300px;
 }
 main .feature a {
-
+    background: linear-gradient(#23fbee, #0a4440);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
 }
 /* Produkter-delens utseende */
 main .products {
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    grid-gap: 20px;
 }
 main .products .range {
-
+    border: 1px solid #595959;
+    padding: 20px;
 }
 main .products h3 {
-
+    text-indent: -9999px;
 }
-main .products .sun a {
-
+main .products .sun {
+    width: 220px;
+    height: 148px;
+    background: url("images/sun.jpg");
 }
-main .products .sun a:hover {
-
+main .products .sun:hover {
+    width: 220px;
+    height: 148px;
+    background: url("images/sun.jpg") 0 -148px;
+    cursor: pointer;
 }
 main .products .sport a {
 
@@ -109,7 +151,7 @@ footer nav ul {
 
 }
 footer nav li {
-
+    display: inline-block;
 }
 footer nav a {
 

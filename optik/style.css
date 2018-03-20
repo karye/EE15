@@ -95,6 +95,7 @@ main .products {
 main .products .range {
     border: 1px solid #595959;
     padding-bottom: 20px;
+    background: linear-gradient(#393939, #000);
 }
 main .products h3 {
     text-indent: -9999px;

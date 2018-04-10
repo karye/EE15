@@ -34,6 +34,10 @@ header h1 {
     color: #16466C;
     text-shadow: 2px 2px 0 #FFF;
 }
+header h1 a, header h1 a:hover {
+    color: #16466C;
+    text-decoration: none;
+}
 header nav {
 
 }

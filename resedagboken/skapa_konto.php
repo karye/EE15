@@ -43,13 +43,13 @@
                 <form action="min_sida.php" class="kolumner" method="post">
                     <div>
                         <label>Förnamn</label>
-                        <input class="form-control" type="text" name="fnamn">
+                        <input class="form-control" type="text" name="fnamn" required>
                         <label>Efternamn</label>
-                        <input class="form-control" type="text" name="enamn">
+                        <input class="form-control" type="text" name="enamn" required>
                         <label>Adress</label>
                         <input class="form-control" type="text" name="adress">
                         <label>Epost</label>
-                        <input class="form-control" type="email" name="epost">
+                        <input class="form-control" type="email" name="epost" required>
                         <label>Mobil</label>
                         <input class="form-control" type="text" name="mobil">
                         <button class="btn btn-primary login-btn" name="registrera">Registrera</button>
@@ -58,11 +58,11 @@
                         <label>Kön</label>
                         <input class="form-control" type="text" name="kon">
                         <label>Användarnamn</label>
-                        <input class="form-control" type="text" name="anamn">
+                        <input class="form-control" type="text" name="anamn" required>
                         <label>Lösenord</label>
-                        <input class="form-control" type="password" name="losen">
+                        <input class="form-control" type="password" name="losen" required>
                         <label>Upprepa lösenord</label>
-                        <input class="form-control" type="password" name="ulosen">
+                        <input class="form-control" type="password" name="ulosen" required>
                     </div>
                 </form>
             </main>

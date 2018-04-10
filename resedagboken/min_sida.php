@@ -1,6 +1,6 @@
 <?php
 /**
-* Hemsidan
+* Medlemssidan
 *
 * PHP version 5
 * @category   Webbtjänst
@@ -17,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Resedagboken för dom ressugna</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
@@ -27,8 +28,8 @@
                 <h1><a href="index.php">Resedagboken</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="#myModal" class="trigger-btn" data-toggle="modal">Logga in</a></li>
-                        <li><a class="aktuell" href="skapa_konto.php">Skapa konto</a></li>
+                        <li><a class="aktuell" href="#">Min sida</a></li>
+                        <li><a href="index.php">Logga ut</a></li>
                         <li><a href="#">Andras resor</a></li>
                         <li>
                             <form>
@@ -38,32 +39,12 @@
                     </ul>
                 </nav>
             </header>
-            <main>
-                <form action="min_sida.php" class="kolumner" method="post">
-                    <div>
-                        <label>Förnamn</label>
-                        <input class="form-control" type="text" name="fnamn">
-                        <label>Efternamn</label>
-                        <input class="form-control" type="text" name="enamn">
-                        <label>Adress</label>
-                        <input class="form-control" type="text" name="adress">
-                        <label>Epost</label>
-                        <input class="form-control" type="email" name="epost">
-                        <label>Mobil</label>
-                        <input class="form-control" type="text" name="mobil">
-                        <button class="btn btn-primary">Registrera</button>
-                    </div>
-                    <div>
-                        <label>Kön</label>
-                        <input class="form-control" type="text" name="kon">
-                        <label>Användarnamn</label>
-                        <input class="form-control" type="text" name="anamn">
-                        <label>Lösenord</label>
-                        <input class="form-control" type="password" name="losen">
-                        <label>Upprepa lösenord</label>
-                        <input class="form-control" type="password" name="ulosen">
-                    </div>
-                </form>
+            <main class="kolumner">
+<?php
+    /* Ta emot data från skapa_konto.php och lagra i databasen */
+    /* Ta emot inloggningsuppgifter och kolla om korrekt */
+    /* Visa medlemssidan */
+?>
             </main>
             <footer class="kolumner">
                 <div>
@@ -76,7 +57,6 @@
                 </div>
             </footer>
         </div>
-
 <?php
     include "inloggningsruta.php";
 ?>

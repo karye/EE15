@@ -4,7 +4,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="avatar">
-                            <img src="images/avatar.png" alt="Avatar">
+                            <i class="fa fa-user"></i>
                         </div>
                         <h4 class="modal-title">Medlem</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -18,7 +18,7 @@
                                 <input type="password" class="form-control" name="losen" placeholder="Lösenord" required="required">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Logga in</button>
+                                <button type="submit" class="btn btn-primary btn-block login-btn" name="logga_in">Logga in</button>
                             </div>
                         </form>
                     </div>

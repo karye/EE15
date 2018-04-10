@@ -17,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Resedagboken för dom ressugna</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
@@ -51,7 +52,7 @@
                         <input class="form-control" type="email" name="epost">
                         <label>Mobil</label>
                         <input class="form-control" type="text" name="mobil">
-                        <button class="btn btn-primary">Registrera</button>
+                        <button class="btn btn-primary login-btn" name="registrera">Registrera</button>
                     </div>
                     <div>
                         <label>Kön</label>

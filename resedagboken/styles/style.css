@@ -13,18 +13,26 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 body {
-
+    background: url("../images/bg.jpg");
+    background-size: cover;
 }
 
 .kontainer {
-
+    font-family: 'Open Sans', sans-serif;
+    width: 960px;
+    margin: auto;
 }
 
 header {
 
+    background: rgba(255, 127, 7, 0.58);
+    padding: 15px 30px 30px 30px;
 }
 header h1 {
-
+    font-family: 'Patua One', sans-serif;
+    font-size: 80px;
+    color: #16466C;
+    text-shadow: 2px 2px 0 #FFF;
 }
 header nav {
 
@@ -33,20 +41,30 @@ header nav ul {
 
 }
 header nav li {
-
+    display: inline-block;
 }
 header nav a {
-
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0 20px 0 0;
+}
+header nav a:hover {
+    color: #FF0000;
+}
+header nav a.aktuell {
+    color: #FF0000;
 }
 header nav input {
 
 }
 
 main {
-
+    background: rgba(84, 211, 242, 0.76);
 }
 main img {
-
+    border: 25px solid #FFF;
 }
 main h2 {
 
@@ -54,13 +72,23 @@ main h2 {
 main p {
 
 }
+main input {
+    margin-bottom: 15px;
+}
 
 footer {
-
 }
 footer h4 {
-
+    font-size: 20px;
+    color: #16466C;
 }
 footer p {
 
+}
+
+.kolumner {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px;
+    grid-gap: 30px;
 }

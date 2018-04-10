@@ -14,6 +14,9 @@
 
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>Resedagboken för dom ressugna</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
@@ -24,26 +27,33 @@
                 <h1>Resedagboken</h1>
                 <nav>
                     <ul>
-                        <li><a class="aktuell" href="#">Logga in</a></li>
-                        <li><a href="#">Skapa konto</a></li>
+                        <li><a class="aktuell" href="index.php">Logga in</a></li>
+                        <li><a href="skapa_konto.php">Skapa konto</a></li>
                         <li><a href="#">Andras resor</a></li>
+                        <li>
+                            <form>
+                                <input class="form-control" type="text" name="sok" placeholder="Sök">
+                            </form>
+                        </li>
                     </ul>
-                    <form>
-                        <input type="text" name="sok" placeholder="Sök">
-                    </form>
                 </nav>
             </header>
-            <main>
+            <main class="kolumner">
                 <img src="images/resa.jpg" alt="Exempel på resa">
-                <h2>På besök i ett tempel</h2>
-                <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid iceland drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb pour-over echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk. Portland cardigan single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage jianbing photo booth everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk hashtag slow-carb ennui. Direct trade chillwave vexillologist chicharrones gluten-free.</p>
-                <p>Chambray coloring book lumbersexual, artisan craft beer banjo jianbing gastropub hella waistcoat asymmetrical. Vegan food truck gastropub meh truffaut, tilde cred pitchfork cray. Tumeric man bun af fashion axe vinyl seitan. Selvage marfa cardigan helvetica, artisan fanny pack squid green juice.</p>
+                <div>
+                    <h2>På besök i ett tempel</h2>
+                    <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid iceland drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb pour-over echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk. Portland cardigan single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage jianbing photo booth everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk hashtag slow-carb ennui. Direct trade chillwave vexillologist chicharrones gluten-free.</p>
+                </div>
             </main>
-            <footer>
-                <h4>Info</h4>
-                <p>...</p>
-                <h4>Kontakt</h4>
-                <p>...</p>
+            <footer class="kolumner">
+                <div>
+                    <h4>Info</h4>
+                    <p>...</p>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <p>...</p>
+                </div>
             </footer>
         </div>
     </body>

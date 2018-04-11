@@ -1,4 +1,16 @@
-        <!-- Modal HTML -->
+<?php
+/**
+* Inloggningsrutan som rullar ned
+*
+* PHP version 5
+* @category   Webbtjänst
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+* @link
+*/
+?>
+
+<!-- Modal HTML -->
         <div id="myModal" class="modal fade">
             <div class="modal-dialog modal-login">
                 <div class="modal-content">

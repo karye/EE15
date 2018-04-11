@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Resedagboken för dom ressugna</title>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/modal.css">
     </head>
 
     <body>
@@ -40,7 +41,7 @@
                 </nav>
             </header>
             <main class="kolumner">
-                <img src="images/resa.jpg" alt="Exempel på resa">
+                <img src="images/mathew-schwartz-354703-unsplash.jpg" alt="Exempel på resa">
                 <div>
                     <h2>På besök i ett tempel</h2>
                     <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid iceland drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb pour-over echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk. Portland cardigan single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage jianbing photo booth everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk hashtag slow-carb ennui. Direct trade chillwave vexillologist chicharrones gluten-free.</p>
@@ -58,14 +59,9 @@
             </footer>
         </div>
 <?php
-    include "inloggningsruta.php";
+    include "includes/inloggningsruta.php";
+    include "includes/frameworks.php";
 ?>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     </body>
 
     </html>

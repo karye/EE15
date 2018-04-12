@@ -56,6 +56,7 @@
     }
 
     if (isset($_POST["logga_in"])) {
+
         // Tar emot data från formulär och rensar bort oönskade taggar eller kod
         $anamn = filter_input(INPUT_POST, "anamn", FILTER_SANITIZE_STRING);
         $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
@@ -63,6 +64,20 @@
         // Om data finns
         if ($anamn && $losen) {
 
+            $sql = "SELECT * FROM anvandare WHERE anamn = '$anamn'";
+
+            // Nu kör vi vår SQL
+            $result = $conn->query($sql);
+
+            // Hämtar resultat från databassökningen
+            $row = $result->fetch_assoc();
+
+            // Kollar om lösenordet stämmer med password_verify()
+            if (password_verify($losen, $row['hash'])) {
+                echo "Inloggning ok!";
+            } else {
+                echo "Inloggning inte ok!";
+            }
         }
 
     } elseif (isset($_POST["registrera"])) {
@@ -76,19 +91,11 @@
         $kon = filter_input(INPUT_POST, "kon", FILTER_SANITIZE_STRING);
         $anamn = filter_input(INPUT_POST, "anamn", FILTER_SANITIZE_STRING);
         $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
-        $ulosen = filter_input(INPUT_POST, "ulosen", FILTER_SANITIZE_STRING);
 
         // Om data finns skjut i databasen
         if ($fnamn && $enamn && $epost && $anamn && $losen && $ulosen) {
 
-            // Kolla att användaren matat in lösenordet två gånger
-            // I fall de är samma, skapa en hash
-            if ($losen == $ulosen) {
-                $hash = password_hash($losen, PASSWORD_DEFAULT);
-            } else {
-                echo "<p>Lösenorden är inte samma.<br>Försök igen!</p>";
-                header("Location: skapa_konto.php");
-            }
+            $hash = password_hash($losen, PASSWORD_DEFAULT);
 
             // Registrera en ny användare
             $sql = "INSERT INTO anvandare

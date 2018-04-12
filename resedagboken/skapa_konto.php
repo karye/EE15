@@ -65,9 +65,9 @@
                         <label>Användarnamn</label>
                         <input class="form-control" type="text" name="anamn" required>
                         <label>Lösenord</label>
-                        <input class="form-control" type="password" name="losen" required>
+                        <input id="losen" class="form-control" type="password" name="losen" required>
                         <label>Upprepa lösenord</label>
-                        <input class="form-control" type="password" name="ulosen" required>
+                        <input id="ulosen" class="form-control" type="password" name="ulosen" required>
                     </div>
                 </form>
             </main>
@@ -87,6 +87,7 @@
     include "includes/inloggningsruta.php";
     include "includes/frameworks.php";
 ?>
+        <script src="js/confirm.js"></script>
     </body>
 
     </html>

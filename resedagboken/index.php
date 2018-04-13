@@ -9,8 +9,14 @@
 * @link
 */
 ?>
-    <!DOCTYPE html>
-    <html lang="sv">
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"]) || isset($_GET["loggaut"])) {
+    $_SESSION["loggedin"] = false;
+}
+?>
+<!DOCTYPE html>
+<html lang="sv">
 
     <head>
         <meta charset="utf-8">
@@ -22,15 +28,20 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/modal.css">
     </head>
-
     <body>
         <div class="kontainer">
             <header>
                 <h1><a href="index.php">Resedagboken</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="#myModal" class="trigger-btn" data-toggle="modal">Logga in</a></li>
-                        <li><a href="skapa_konto.php">Skapa konto</a></li>
+                        <?php
+                        if (!$_SESSION["loggedin"]) {
+                            echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
+                            echo "<li><a href=\"skapa_konto.php\">Skapa konto</a></li>";
+                        } else {
+                            echo "<li><a class=\"aktuell\" href=\"min_sida.php\">Min sida</a></li>";
+                        }
+                        ?>
                         <li><a href="#">Andras resor</a></li>
                         <li>
                             <form>
@@ -62,6 +73,7 @@
     include "includes/inloggningsruta.php";
     include "includes/frameworks.php";
 ?>
+        <script src="js/login.js"></script>
     </body>
 
-    </html>
+</html>

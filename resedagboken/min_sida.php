@@ -9,8 +9,14 @@
 * @link
 */
 ?>
-    <!DOCTYPE html>
-    <html lang="sv">
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+?>
+<!DOCTYPE html>
+<html lang="sv">
 
     <head>
         <meta charset="utf-8">
@@ -31,7 +37,7 @@
                 <nav>
                     <ul>
                         <li><a class="aktuell" href="#">Min sida</a></li>
-                        <li><a href="index.php">Logga ut</a></li>
+                        <li><a href="index.php?loggaut=1">Logga ut</a></li>
                         <li><a href="#">Andras resor</a></li>
                         <li>
                             <form>
@@ -75,6 +81,7 @@
             // Kollar om lösenordet stämmer med password_verify()
             if (password_verify($losen, $row['hash'])) {
                 echo "Inloggning ok!";
+                $_SESSION["loggedin"] = true;
             } else {
                 echo "Inloggning inte ok!";
             }
@@ -93,7 +100,7 @@
         $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
 
         // Om data finns skjut i databasen
-        if ($fnamn && $enamn && $epost && $anamn && $losen && $ulosen) {
+        if ($fnamn && $enamn && $epost && $anamn && $losen) {
 
             $hash = password_hash($losen, PASSWORD_DEFAULT);
 

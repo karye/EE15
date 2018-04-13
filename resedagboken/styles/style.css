@@ -24,8 +24,7 @@ body {
 }
 
 header {
-
-    background: rgba(255, 127, 7, 0.58);
+    background: rgba(255, 127, 7, 0.8);
     padding: 15px 30px 30px 30px;
 }
 header h1 {
@@ -52,15 +51,12 @@ header nav li {
 header nav a {
     color: #FFF;
     font-weight: bold;
-    text-decoration: none;
     font-size: 25px;
     padding: 0 20px 0 0;
 }
-header nav a:hover {
+header nav a:hover, header nav a.aktuell {
     color: #FF0000;
-}
-header nav a.aktuell {
-    color: #FF0000;
+    text-decoration-line: underline;
 }
 header nav input {
 
@@ -86,8 +82,13 @@ main input.form-control, main select.form-control {
     display: inline;
     width: 250px;
 }
+main button {
+    width: 250px;
+    margin-left: 5px;
+}
 
 footer {
+    background: rgba(255, 127, 7, 0.8);
 }
 footer h4 {
     font-size: 20px;

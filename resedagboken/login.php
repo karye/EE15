@@ -34,3 +34,6 @@ if ($anamn && $losen) {
 } else {
     echo "Nej";
 }
+
+// Stänger ned anslutningen
+$conn->close();

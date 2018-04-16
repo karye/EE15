@@ -1,31 +1,36 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    var user = document.getElementById("user");
-    var password = document.getElementById("password");
+    // Lyssna på klick på knappen button
+    $("#logga_in").on("click", function (event) {
 
-    $('#logga_in').on('click', function(event) {
-        if ($(this).closest('form')[0].checkValidity()) {
+        // Slå på HTML5 formulärvalidering
+        if ($("#login")[0].checkValidity()) {
+
+            // Hindra formuläret att skicka via POST
             event.preventDefault();
 
-            console.log("valid");
+            // Läser av det som skrivits in
+            var user = $("#user").val();
+            var password = $("#password").val();
 
+            // Skicka ett ajax-meddelande
             $.ajax({
                 url: "login.php",
                 method: "POST",
                 data: {
-                    anamn: user.value,
-                    losen: password.value
+                    anamn: user,
+                    losen: password
                 },
                 success: function (data) {
                     if (data == "Ja") {
-                        $("#fel").text("Rätt inloggning");
+                        $("#fel").text("Inloggning ok!");
                         window.location = "min_sida.php";
                     } else {
-                       $("#fel").text("Fel inloggning");
+                        $("#fel").text("Fel användarnamn eller lösenord!");
                     }
                 }
+
             });
         }
-
     });
 });

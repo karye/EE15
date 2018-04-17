@@ -1,4 +1,20 @@
 <?php
+/**
+ * Loginsida
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
+?>
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"])) {
+    $_SESSION["loggedin"] = false;
+}
+
 include_once '../../config_db/konfig_db_resedagboken.php';
 
 // Vi försöker öppna en anslutningen mot vår databas

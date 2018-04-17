@@ -21,6 +21,7 @@ $(document).ready(function () {
                     anamn: user,
                     losen: password
                 },
+                // Hantera svaret från login.php
                 success: function (data) {
                     if (data == "Ja") {
                         $("#fel").text("Inloggning ok!");
@@ -31,6 +32,7 @@ $(document).ready(function () {
                 }
 
             });
+
         }
     });
 });

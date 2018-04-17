@@ -15,7 +15,7 @@ $(document).ready(function () {
 
             // Skicka ett ajax-meddelande
             $.ajax({
-                url: "login.php",
+                url: "includes/login.php",
                 method: "POST",
                 data: {
                     anamn: user,

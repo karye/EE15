@@ -29,7 +29,26 @@ if (!isset($_SESSION["loggedin"])) {
     </head>
 <?php
     include '../../config_db/konfig_db_resedagboken.php';
-
+?>
+    <body>
+        <div class="kontainer">
+            <header>
+                <h1><a href="index.php">Resedagboken</a></h1>
+                <nav>
+                    <ul>
+                        <li><a class="aktuell" href="#">Min sida</a></li>
+                        <li><a href="index.php?loggaut=1">Logga ut</a></li>
+                        <li><a href="#">Andras resor</a></li>
+                        <li>
+                            <form>
+                                <input class="form-control" type="text" name="sok" placeholder="Sök">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="kolumner">
+<?php
     /* Ta emot data från skapa_konto.php och lagra i databasen */
     /* Ta emot inloggningsuppgifter och kolla om korrekt */
     /* Visa medlemssidan */
@@ -79,25 +98,6 @@ if (!isset($_SESSION["loggedin"])) {
         }
     }
 ?>
-    <body>
-        <div class="kontainer">
-            <header>
-                <h1><a href="index.php">Resedagboken</a></h1>
-                <nav>
-                    <ul>
-                        <li><a class="aktuell" href="#">Min sida</a></li>
-                        <li><a href="index.php?loggaut=1">Logga ut</a></li>
-                        <li><a href="#">Andras resor</a></li>
-                        <li>
-                            <form>
-                                <input class="form-control" type="text" name="sok" placeholder="Sök">
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <main class="kolumner">
-
             </main>
             <footer class="kolumner">
                 <div>

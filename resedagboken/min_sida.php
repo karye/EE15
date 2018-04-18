@@ -126,15 +126,29 @@ if (isset($_POST["registrera"])) {
 
     <script>
     function initMap() {
-        var paris = {lat: 48.864716, lng: 2.349014};
+        var bounds = new google.maps.LatLngBounds();
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
-            center: paris
+            center: {lat: 48.864716, lng: 2.349014}
         });
-        var marker = new google.maps.Marker({
-            position: paris,
-            map: map
-        });
+
+        // Multiple Markers
+        var markers = [
+            ['Paris', 48.864716, 2.349014],
+            ['London Eye, London', 51.503454,-0.119562],
+            ['Vienna', 48.210033, 16.363449]
+        ];
+
+        // Loop through our array of markers & place each one on the map
+        for( i = 0; i < markers.length; i++ ) {
+            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            bounds.extend(position);
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: markers[i][0]
+            });
+        }
     }
     </script>
     <script async defer

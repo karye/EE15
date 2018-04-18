@@ -23,6 +23,7 @@ $(document).ready(function () {
                 },
                 // Hantera svaret från login.php
                 success: function (data) {
+                    console.log(data);
                     if (data == "Ja") {
                         $("#fel").text("Inloggning ok!");
                         window.location = "min_sida.php";

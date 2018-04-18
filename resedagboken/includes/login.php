@@ -15,7 +15,7 @@ if (!isset($_SESSION["loggedin"])) {
     $_SESSION["loggedin"] = false;
 }
 
-include_once '../../config_db/konfig_db_resedagboken.php';
+include_once '../../../config_db/konfig_db_resedagboken.php';
 
 // Vi försöker öppna en anslutningen mot vår databas
 $conn = new mysqli($hostname, $user, $password, $database);
@@ -32,6 +32,7 @@ $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
 // Om data finns
 if ($anamn && $losen) {
 
+    // Sök efter anvandare i tabellen
     $sql = "SELECT * FROM anvandare WHERE anamn = '$anamn'";
 
     // Nu kör vi vår SQL
@@ -44,6 +45,7 @@ if ($anamn && $losen) {
     if (password_verify($losen, $row['hash'])) {
         echo "Ja";
         $_SESSION["loggedin"] = true;
+        $_SESSION["anamn"] = $anamn;
     } else {
         echo "Nej";
     }

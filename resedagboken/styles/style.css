@@ -87,6 +87,37 @@ main button {
     margin-left: 5px;
 }
 
+/* Utseende på vertikala menyn i Min sida */
+main nav {
+    background: #BBC6BB;
+    padding: 30px;
+}
+main nav h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #16466C;
+}
+main nav li {
+    list-style-type: none;
+}
+main nav a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    padding: 0 20px 0 0;
+}
+main nav a:hover, main nav a.aktuell {
+    color: #FF0000;
+    text-decoration-line: underline;
+}
+
+/* Google Maps */
+main #map {
+    height: 400px;
+    background-color: grey;
+}
+
 footer {
     background: rgba(255, 127, 7, 0.8);
 }
@@ -104,4 +135,8 @@ footer p {
     padding: 30px;
     grid-gap: 30px;
 }
-
+.kolumner_minsida {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-gap: 0;
+}

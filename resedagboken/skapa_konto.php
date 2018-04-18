@@ -35,8 +35,14 @@ if (!isset($_SESSION["loggedin"])) {
                 <h1><a href="index.php">Resedagboken</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="#myModal" class="trigger-btn" data-toggle="modal">Logga in</a></li>
-                        <li><a class="aktuell" href="skapa_konto.php">Skapa konto</a></li>
+                        <?php
+                        if (!$_SESSION["loggedin"]) {
+                            echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
+                            echo "<li><a class=\"aktuell\" href=\"skapa_konto.php\">Skapa konto</a></li>";
+                        } else {
+                            echo "<li><a class=\"aktuell\" href=\"min_sida.php\">Min sida</a></li>";
+                        }
+                        ?>
                         <li><a href="#">Andras resor</a></li>
                         <li>
                             <form>
@@ -94,6 +100,7 @@ if (!isset($_SESSION["loggedin"])) {
     include "includes/frameworks.php";
 ?>
         <script src="js/confirm.js"></script>
+        <script src="js/login.js"></script>
     </body>
 
     </html>

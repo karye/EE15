@@ -102,15 +102,19 @@ if (isset($_POST["registrera"])) {
             <nav>
                 <h3><?php echo $_SESSION["anamn"] ?></h3>
                 <ul>
-                    <li><a class="aktuell" href="min_sida.php">Mina resor</a></li>
-                    <li><a href="min_sida_skapa_resa.php">Skapa resa</a></li>
+                    <li><a href="min_sida.php">Mina resor</a></li>
+                    <li><a class="aktuell" href="min_sida_skapa_resa.php">Skapa resa</a></li>
                     <li><a href="">Mina inlägg</a></li>
                     <li><a href="">Fotoalbum</a></li>
                     <li><a href="">Ladda upp</a></li>
                 </ul>
             </nav>
-            <div id="map">
-            </div>
+            <form class="" action="" method="post">
+                <label>Namn</label><input class="form-control" class="form-control" type="text" name="namn"><br>
+                <label>Beskrivning</label><textarea class="form-control" name="beskrivning" rows="8"></textarea><br>
+                <label>Privat</label><input class="form-control" type="checkbox" name="privat"><br>
+                <label></label><button class="btn btn-primary login-btn">Publicera</button>
+            </form>
         </main>
         <footer class="kolumner">
             <div>
@@ -123,36 +127,6 @@ if (isset($_POST["registrera"])) {
             </div>
         </footer>
     </div>
-
-    <script>
-    function initMap() {
-        var bounds = new google.maps.LatLngBounds();
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: {lat: 50, lng: 10}
-        });
-
-        // Multiple Markers
-        var markers = [
-            ['Paris', 48.864716, 2.349014],
-            ['London Eye, London', 51.503454,-0.119562],
-            ['Vienna', 48.210033, 16.363449]
-        ];
-
-        // Loop through our array of markers & place each one on the map
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0]
-            });
-        }
-    }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNO9bd6B1_7SuSg7g7IxWeHtK9uHK3bA&callback=initMap">
     </script>
 </body>
 

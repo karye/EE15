@@ -13,6 +13,8 @@
 session_start();
 if (!isset($_SESSION["loggedin"])) {
     $_SESSION["loggedin"] = false;
+} elseif (!$_SESSION["loggedin"]) {
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -30,9 +32,7 @@ if (!isset($_SESSION["loggedin"])) {
 <?php
 include '../../config_db/konfig_db_resedagboken.php';
 
-/* Ta emot data från skapa_konto.php och lagra i databasen */
-/* Ta emot inloggningsuppgifter och kolla om korrekt */
-/* Visa medlemssidan */
+/* Ta emot data och lagra i databasen */
 
 // Vi försöker öppna en anslutningen mot vår databas
 $conn = new mysqli($hostname, $user, $password, $database);
@@ -42,27 +42,23 @@ if ($conn->connect_error) {
     die("<p>Ett fel inträffade: " . $conn->connect_error . "</p>");
 }
 
-if (isset($_POST["registrera"])) {
+if (isset($_POST["publicera"])) {
 
     // Tar emot data från formulär och rensar bort oönskade taggar eller kod
-    $fnamn = filter_input(INPUT_POST, "fnamn", FILTER_SANITIZE_STRING);
-    $enamn = filter_input(INPUT_POST, "enamn", FILTER_SANITIZE_STRING);
-    $adress = filter_input(INPUT_POST, "adress", FILTER_SANITIZE_STRING);
-    $epost = filter_input(INPUT_POST, "epost", FILTER_SANITIZE_STRING);
-    $mobil = filter_input(INPUT_POST, "mobil", FILTER_SANITIZE_STRING);
-    $kon = filter_input(INPUT_POST, "kon", FILTER_SANITIZE_STRING);
-    $anamn = filter_input(INPUT_POST, "anamn", FILTER_SANITIZE_STRING);
-    $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
+    $rnamn = filter_input(INPUT_POST, "rnamn", FILTER_SANITIZE_STRING);
+    $rbeskrivning = filter_input(INPUT_POST, "rbeskrivning", FILTER_SANITIZE_STRING);
+    $rprivat = filter_input(INPUT_POST, "rprivat", FILTER_SANITIZE_STRING);
+
+    // Översätt kryssrutans värde till true/false för att kunna lagras i tabellen
+    $rchecked = ($rprivat) ? true : false;
 
     // Om data finns skjut i databasen
-    if ($fnamn && $enamn && $epost && $anamn && $losen) {
+    if ($rnamn && $rbeskrivning) {
 
-        $hash = password_hash($losen, PASSWORD_DEFAULT);
-
-        // Registrera en ny användare
-        $sql = "INSERT INTO anvandare
-        (fnamn, enamn, adress, epost, mobil, kon, anamn, hash) VALUES
-        ('$fnamn', '$enamn', '$adress', '$epost', '$mobil', '$kon', '$anamn', '$hash')";
+        // Registrera en ny resa
+        $sql = "INSERT INTO resa
+        (namn, beskrivning, privat) VALUES
+        ('$rnamn', '$rbeskrivning', '$rchecked')";
 
         // Nu kör vi vår SQL
         $result = $conn->query($sql);
@@ -71,9 +67,8 @@ if (isset($_POST["registrera"])) {
         if (!$result) {
             die("<p>Det blev något fel i databasfrågan</p>");
         } else {
-            //echo "<p>Användaren är registrerad!</p>";
-            $_SESSION["loggedin"] = true;
-            $_SESSION["anamn"] = $anamn;
+            echo "<p>Resan är registrerad!</p>";
+            $_SESSION["rnamn"] = $rnamn;
         }
 
         // Stänger ned anslutningen
@@ -102,18 +97,18 @@ if (isset($_POST["registrera"])) {
             <nav>
                 <h3><?php echo $_SESSION["anamn"] ?></h3>
                 <ul>
-                    <li><a href="min_sida.php">Mina resor</a></li>
+                    <li><a href="min_sida_mina_resor.php">Mina resor</a></li>
                     <li><a class="aktuell" href="min_sida_skapa_resa.php">Skapa resa</a></li>
                     <li><a href="">Mina inlägg</a></li>
                     <li><a href="">Fotoalbum</a></li>
                     <li><a href="">Ladda upp</a></li>
                 </ul>
             </nav>
-            <form class="" action="" method="post">
-                <label>Namn</label><input class="form-control" class="form-control" type="text" name="namn"><br>
-                <label>Beskrivning</label><textarea class="form-control" name="beskrivning" rows="8"></textarea><br>
-                <label>Privat</label><input class="form-control" type="checkbox" name="privat"><br>
-                <label></label><button class="btn btn-primary login-btn">Publicera</button>
+            <form action="#" method="post">
+                <label>Namn</label><input class="form-control" class="form-control" type="text" name="rnamn"><br>
+                <label>Beskrivning</label><textarea class="form-control" name="rbeskrivning" rows="8"></textarea><br>
+                <label>Privat</label><input class="form-control" type="checkbox" name="rprivat"><br>
+                <label></label><button class="btn btn-primary login-btn" name="publicera">Publicera</button>
             </form>
         </main>
         <footer class="kolumner">

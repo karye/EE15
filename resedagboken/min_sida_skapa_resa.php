@@ -50,7 +50,7 @@ if (isset($_POST["publicera"])) {
     $rprivat = filter_input(INPUT_POST, "rprivat", FILTER_SANITIZE_STRING);
 
     // Översätt kryssrutans värde till true/false för att kunna lagras i tabellen
-    $rchecked = ($rprivat) ? true : false;
+    $rkryss = ($rprivat) ? true : false;
 
     // Om data finns skjut i databasen
     if ($rnamn && $rbeskrivning) {
@@ -58,7 +58,7 @@ if (isset($_POST["publicera"])) {
         // Registrera en ny resa
         $sql = "INSERT INTO resa
         (namn, beskrivning, privat) VALUES
-        ('$rnamn', '$rbeskrivning', '$rchecked')";
+        ('$rnamn', '$rbeskrivning', '$rkryss')";
 
         // Nu kör vi vår SQL
         $result = $conn->query($sql);

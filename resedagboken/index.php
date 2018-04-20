@@ -39,7 +39,7 @@ if (!isset($_SESSION["loggedin"]) || isset($_GET["loggaut"])) {
                         echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
                         echo "<li><a href=\"skapa_konto.php\">Skapa konto</a></li>";
                     } else {
-                        echo "<li><a href=\"min_sida.php\">Min sida</a></li>";
+                        echo "<li><a href=\"min_sida_mina_resor.php\">Min sida</a></li>";
                     }
                     ?>
                     <li><a href="andras_resor.php">Andras resor</a></li>

@@ -26,7 +26,7 @@ $(document).ready(function () {
                     console.log(data);
                     if (data == "Ja") {
                         $("#fel").text("Inloggning ok!");
-                        window.location = "min_sida.php";
+                        window.location = "min_sida_mina_resor.php";
                     } else {
                         $("#fel").text("Fel användarnamn eller lösenord!");
                     }

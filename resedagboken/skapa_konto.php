@@ -43,7 +43,7 @@ if (!isset($_SESSION["loggedin"])) {
                             echo "<li><a class=\"aktuell\" href=\"min_sida.php\">Min sida</a></li>";
                         }
                         ?>
-                        <li><a href="#">Andras resor</a></li>
+                        <li><a href="andras_resor.php">Andras resor</a></li>
                         <li>
                             <form>
                                 <input class="form-control" type="text" name="sok" placeholder="Sök">
@@ -53,7 +53,7 @@ if (!isset($_SESSION["loggedin"])) {
                 </nav>
             </header>
             <main>
-                <form action="min_sida.php" class="kolumner" method="post">
+                <form action="min_sida_mina_resor.php" class="kolumner" method="post">
                     <div>
                         <label>Förnamn</label>
                         <input class="form-control" type="text" name="fnamn" required>

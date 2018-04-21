@@ -43,26 +43,26 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST["publicera"])) {
-
+    
     // Tar emot data från formulär och rensar bort oönskade taggar eller kod
     $rnamn = filter_input(INPUT_POST, "rnamn", FILTER_SANITIZE_STRING);
     $rbeskrivning = filter_input(INPUT_POST, "rbeskrivning", FILTER_SANITIZE_STRING);
     $rprivat = filter_input(INPUT_POST, "rprivat", FILTER_SANITIZE_STRING);
-
+    
     // Översätt kryssrutans värde till true/false för att kunna lagras i tabellen
     $rkryss = ($rprivat) ? true : false;
-
+    
     // Om data finns skjut i databasen
     if ($rnamn && $rbeskrivning) {
-
+        
         // Registrera en ny resa
         $sql = "INSERT INTO resa
         (namn, beskrivning, privat) VALUES
         ('$rnamn', '$rbeskrivning', '$rkryss')";
-
+        
         // Nu kör vi vår SQL
         $result = $conn->query($sql);
-
+        
         // Gick det bra att köra SQL-kommandot?
         if (!$result) {
             die("<p>Det blev något fel i databasfrågan</p>");
@@ -70,7 +70,7 @@ if (isset($_POST["publicera"])) {
             echo "<p>Resan är registrerad!</p>";
             $_SESSION["rnamn"] = $rnamn;
         }
-
+        
         // Stänger ned anslutningen
         $conn->close();
     }
@@ -122,7 +122,6 @@ if (isset($_POST["publicera"])) {
             </div>
         </footer>
     </div>
-    </script>
 </body>
 
 </html>

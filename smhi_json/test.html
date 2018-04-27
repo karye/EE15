@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>SMHI prognos</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="450"></canvas>
+	<script>
+	  	window.onload = function() {
+	  		var config = {
+	  			type: 'line',
+	  			data: {
+	  				labels: ['11:00:00', '12:00:00', '13:00:00'],
+	  				datasets: [{
+	  					data: [11, 9.9, 10.7],
+	  					label: 'SMHI prognos',
+	  					borderColor: '#3e95cd',
+	  					fill: false
+	  				}]
+	  			}
+	  		};
+			var ctx = document.getElementById('canvas').getContext('2d');
+			var myChart = new Chart(ctx, config);
+		};
+	</script>
+</body>
+</html>

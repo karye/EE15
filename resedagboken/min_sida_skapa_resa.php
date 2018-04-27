@@ -47,6 +47,8 @@ if (isset($_POST["publicera"])) {
     // Tar emot data från formulär och rensar bort oönskade taggar eller kod
     $rnamn = filter_input(INPUT_POST, "rnamn", FILTER_SANITIZE_STRING);
     $rbeskrivning = filter_input(INPUT_POST, "rbeskrivning", FILTER_SANITIZE_STRING);
+    $rlat = filter_input(INPUT_POST, "rlat", FILTER_SANITIZE_STRING);
+    $rlng = filter_input(INPUT_POST, "rlng", FILTER_SANITIZE_STRING);
     $rprivat = filter_input(INPUT_POST, "rprivat", FILTER_SANITIZE_STRING);
 
     // Översätt kryssrutans värde till true/false för att kunna lagras i tabellen
@@ -57,8 +59,8 @@ if (isset($_POST["publicera"])) {
 
         // Registrera en ny resa
         $sql = "INSERT INTO resa
-        (namn, beskrivning, privat) VALUES
-        ('$rnamn', '$rbeskrivning', '$rkryss')";
+        (namn, beskrivning, lat, lng, privat) VALUES
+        ('$rnamn', '$rbeskrivning', '$rlat', '$rlng', '$rkryss')";
 
         // Nu kör vi vår SQL
         $result = $conn->query($sql);
@@ -105,8 +107,13 @@ if (isset($_POST["publicera"])) {
                 </ul>
             </nav>
             <form action="#" method="post">
-                <label>Namn</label><input class="form-control" class="form-control" type="text" name="rnamn"><br>
-                <label>Beskrivning</label><textarea class="form-control" name="rbeskrivning" rows="8"></textarea><br>
+                <label>Namn</label>
+                <input class="form-control" type="text" name="rnamn" required><br>
+                <label>Beskrivning</label>
+                <textarea class="form-control" name="rbeskrivning" rows="6"></textarea><br>
+                <label>Position lat,long</label>
+                <input class="form-control" type="text" name="rlat" required>
+                <input class="form-control" type="text" name="rlng" required><br>
                 <label>Privat</label><input class="form-control" type="checkbox" name="rprivat"><br>
                 <label></label><button class="btn btn-primary login-btn" name="publicera">Publicera</button>
             </form>

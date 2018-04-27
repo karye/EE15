@@ -94,6 +94,7 @@ main form textarea.form-control {
     display: inline;
     vertical-align: top;
     width: 500px;
+    margin-bottom: 15px;
 }
 main button {
     width: 250px;

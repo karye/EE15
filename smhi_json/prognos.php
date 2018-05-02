@@ -7,15 +7,19 @@
 </head>
 <body>
 	<canvas id="canvas" width="800" height="450"></canvas>
-	<?php 
-	$url = "https://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/16/lat/58/data.json";
+	<?php
 
+    // Hämta data från tjänsten
+	$url = "https://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/16/lat/58/data.json";
 	$contents = file_get_contents($url);
+
+    // Avkoda data i JSON-formatet
 	$prognos = json_decode($contents);
 	$timeSeries = $prognos->timeSeries;
 	$labels = "[";
 	$data = "[";
 
+    // Leta rätt på data som sökes
 	foreach ($timeSeries as $timeSerie) {
 		$validTime = $timeSerie->validTime;
 		$validTime = substr($validTime, 0, -4);
@@ -23,7 +27,7 @@
 		foreach ($parameters as $parameter) {
 			$name = $parameter->name;
 			$temp = $parameter->values[0];
-			
+
 			if ($name == 't') {
 				$labels .= "'$validTime', ";
 				$data .= "$temp, ";

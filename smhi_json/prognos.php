@@ -7,7 +7,7 @@
 * @author     Karim Ryde <karye.webb@gmail.com>
 * @license    PHP CC
 * @link
-*             https://opendata.smhi.se/apidocs/metfcst/examples.html
+* API-dok     https://opendata.smhi.se/apidocs/metfcst/examples.html
 */
 ?>
 <!DOCTYPE html>

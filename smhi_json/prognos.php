@@ -1,3 +1,15 @@
+<?php
+/**
+* Hämta väder från SMHI
+*
+* PHP version 7
+* @category   json övning
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+* @link
+*             https://opendata.smhi.se/apidocs/metfcst/examples.html
+*/
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>

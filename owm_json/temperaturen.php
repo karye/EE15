@@ -2,14 +2,11 @@
 <html lang="sv">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Temperaturen i Stockholm</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 	<?php
-    date_default_timezone_set('Europe/Stockholm');
-    setlocale(LC_ALL, 'sv_SE');
-
 	// Adress till vädertjänsten
 	$url = "http://api.openweathermap.org/data/2.5/weather?id=2673722&units=metric&APPID=22ee1d58f7adae08ee71fa7c0bd24481";
 
@@ -17,7 +14,7 @@
 	$contents = file_get_contents($url);
 	$clima = json_decode($contents);
 
-	// Plocka temperaturer
+	// Plocka ut temperaturer
 	$temp_max = $clima->main->temp_max;
 	$temp_min = $clima->main->temp_min;
 	$icon = $clima->weather[0]->icon.".png";

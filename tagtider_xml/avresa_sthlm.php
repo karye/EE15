@@ -29,14 +29,14 @@
     $response = curl_exec($session);
     curl_close($session);
 
-    // Skriv i data i tabellform
-    echo "<table class=\"table table-dark table-striped table-hover\">";
-
+    // Kolla om data är i xml-format
     if ($response) {
         $xml = simplexml_load_string($response) or die("Error: Cannot create object");
         //print_r($xml);
-
         $transfer = $xml->station->transfers->transfer;
+
+        // Skriv i data i tabellform
+        echo "<table class=\"table table-dark table-striped table-hover\">";
         echo "<tr>
         <th>Avgångstid</th>
         <th>Destination</th>

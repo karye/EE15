@@ -1,3 +1,15 @@
+<?php
+/**
+* Hämta Hämta temperatur från openweathermap.org
+*
+* PHP version 7
+* @category   json övning
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+* @link
+* API-dok     https://openweathermap.org/current
+*/
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+
 /* Enkel CSS-reset */
 html {
     box-sizing: border-box;
@@ -10,6 +12,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     padding: 0;
 }
 
+body {
+    font-family: 'Fugaz One', cursive;
+    text-align: center;
+}
 #map {
     height: 600px;
     background-color: grey;

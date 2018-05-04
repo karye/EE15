@@ -1,3 +1,15 @@
+<?php
+/**
+* Hämta tågavgångar från api.tagtider.ne
+*
+* PHP version 7
+* @category   xml övning
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+* @link
+* API-dok     http://tagtider.net/api
+*/
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">

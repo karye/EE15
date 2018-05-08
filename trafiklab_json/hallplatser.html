@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>SL närmaste hållplatser</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Hållplatser närmast mig</h1>
+    <div id="map"></div>
+    <script>
+        $(function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showLocation);
+            } else {
+                $('#map').html("<h2>Kan inte hitta din position</h2>");
+            }
+
+            function showLocation(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                $('#map').html("<h2>Din position är " + lat + ", " + lng + "</h2>");
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'sl.php',
+                    data: 'lat=' + lat + '&lng=' + lng,
+                    dataType: 'script'
+                });
+            }
+        });
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNO9bd6B1_7SuSg7g7IxWeHtK9uHK3bA">
+    </script>
+</body>
+</html>

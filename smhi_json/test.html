@@ -1,13 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <title>SMHI prognos</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <style media="screen">
+        header {
+            text-align: center;
+            background: #f6f0ef;
+            padding: 10px;
+            font: 20px sans-serif;
+        }
+        main {
+            width: 600px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-	<canvas id="canvas" width="800" height="450"></canvas>
+    <header>
+        <h1>Chart.js</h1>
+    </header>
+    <main>
+        <canvas id="canvas" width="400" height="300"></canvas>
+    </main>
 	<script>
 	  	window.onload = function() {
 	  		var config = {
@@ -17,12 +33,13 @@
 	  				datasets: [{
 	  					data: [11, 9.9, 10.7],
 	  					label: 'SMHI prognos',
-	  					borderColor: '#3e95cd',
+                        borderColor: '#3e95cd',
 	  					fill: false
 	  				}]
 	  			}
 	  		};
-			var ctx = document.getElementById('canvas').getContext('2d');
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
 			var myChart = new Chart(ctx, config);
 		};
 	</script>

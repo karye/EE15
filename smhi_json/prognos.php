@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <title>SMHI prognos</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 </head>
 <body>
 	<canvas id="canvas" width="800" height="450"></canvas>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <h1>Närmsta hållplatser</h1>
     <div id="map"></div>
     <script>
     function initMap() {
@@ -17,13 +18,7 @@
             ['Sabbatsbergs sjukhus (Stockholm)', 59.339017, 18.048515],
             ['Tegnérgatan (på Dalagatan) (Stockholm)', 59.337471, 18.050591],
             ['Tegnérgatan (Västm.g/Upplandsg) (Stockholm)', 59.338064, 18.052101],
-            ['Wallingatan (Stockholm)', 59.335979, 18.052919],
-            ['Observatoriegatan (Stockholm)', 59.340545, 18.050564],
-            ['Dalagatan (Stockholm)', 59.341534, 18.045198],
-            ['Vasaparken (Stockholm)', 59.341534, 18.045198],
-            ['Fleminggatan/Scheelegatan (Stockholm)', 59.332949, 18.044703],
-            ['Scheelegatan/Fleminggatan (Stockholm)', 59.332949, 18.044703],
-            ['Norra Bantorget (Stockholm)', 59.335233, 18.055365]
+            ['Wallingatan (Stockholm)', 59.335979, 18.052919]
         ];
         for (i = 0; i < markers.length; i++) {
             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);

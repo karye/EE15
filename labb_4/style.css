@@ -17,7 +17,12 @@ body {
     text-align: center;
 }
 
+h1 {
+	font: sans-serif;
+}
+
 ul img {
     width: 100px;
     border: 0px solid #AAA;
 }
+

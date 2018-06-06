@@ -17,7 +17,7 @@
     <title>Adressuppgfter</title>
 </head>
 <body>
-    <h1>Adressuppgfter</h1>
+    <h1>Adressuppgifter</h1>
     <?php
 
     // Kolla om post-variablerna finns
@@ -35,19 +35,12 @@
         $epost = $_POST["epost"];
 
         /* Kontrollera att alla fälten är ifyllda */
-        if (strlen($namn) == 0 ||
-           strlen($adress) == 0 ||
-           strlen($pnr) == 0 ||
-           strlen($padress) == 0 ||
-           strlen($epost) == 0) {
+        if (strlen($namn) == 0 || strlen($adress) == 0 || strlen($pnr) == 0 || strlen($padress) == 0 || strlen($epost) == 0) {
             echo "<p>Fel: Alla fälten är inte ifyllda, försök igen!</p>";
         }
 
         /* Kontrollera att alla fält innehåller minst tre tecken */
-        if (strlen($namn) < 3 ||
-           strlen($adress) < 3 ||
-           strlen($pnr) < 3 ||
-           strlen($padress) < 3) ||
+        if (strlen($namn) < 3 || strlen($adress) < 3 || strlen($pnr) < 3 || strlen($padress) < 3) ||
            strlen($epost) < 3) {
             echo "<p>Fel: Alla fälten måste vara minst tre tecken långa, försök igen!</p>";
         }

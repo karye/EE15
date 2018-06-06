@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <title>Enkel Filuppladdning</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
@@ -26,7 +26,7 @@
         $fileSize = $file['size'];
         $fileError = $file['error'];
         $fileType = $file['type'];
-
+        
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
         $allowedExt = ['jpg', 'jpeg', 'png'];

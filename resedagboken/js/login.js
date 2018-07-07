@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
 
     // Lyssna på klick på knappen button
     $("#logga_in").on("click", function (event) {

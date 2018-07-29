@@ -1,13 +1,13 @@
 <?php
 /**
-* Hemsidan
-*
-* PHP version 5
-* @category   Webbtjänst
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Hemsidan
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <?php
 session_start();
@@ -35,13 +35,13 @@ if (!isset($_SESSION["loggedin"]) || isset($_GET["loggaut"])) {
             <nav>
                 <ul>
                     <?php
-                    if (!$_SESSION["loggedin"]) {
-                        echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
-                        echo "<li><a href=\"skapa_konto.php\">Skapa konto</a></li>";
-                    } else {
-                        echo "<li><a href=\"min_sida_mina_resor.php\">Min sida</a></li>";
-                    }
-                    ?>
+if (!$_SESSION["loggedin"]) {
+    echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
+    echo "<li><a href=\"skapa_konto.php\">Skapa konto</a></li>";
+} else {
+    echo "<li><a href=\"min_sida_mina_resor.php\">Min sida</a></li>";
+}
+?>
                     <li><a class="aktuell" href="andras_resor.php">Andras resor</a></li>
                     <li>
                         <form>
@@ -67,9 +67,9 @@ if (!isset($_SESSION["loggedin"]) || isset($_GET["loggaut"])) {
         </footer>
     </div>
     <?php
-    include "includes/inloggningsruta.php";
-    include "includes/frameworks.php";
-    ?>
+include "includes/inloggningsruta.php";
+include "includes/frameworks.php";
+?>
     <script src="js/login.js"></script>
 
     <script>

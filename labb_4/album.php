@@ -1,12 +1,12 @@
 <?php
 /**
-* Lista alla bilder i katalog. Visa som album.
-*
-* @category   scandir övning
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Lista alla bilder i katalog. Visa som album.
+ *
+ * @category   scandir övning
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -18,16 +18,16 @@
 <body>
     <h1>Album</h1>
     <?php
-    $directory = "uploads";
-    $fileList= scandir($directory);
+$directory = "uploads";
+$fileList = scandir($directory);
 
-    echo "<ul>";
-    foreach ($fileList as $file) {
-        if (!in_array($file ,array(".",".."))) {
-            echo "<li><a href=\"uploads/$file\"><img src=\"uploads/$file\"></a></li>";
-        }
+echo "<ul>";
+foreach ($fileList as $file) {
+    if (!in_array($file, array(".", ".."))) {
+        echo "<li><a href=\"uploads/$file\"><img src=\"uploads/$file\"></a></li>";
     }
-    echo "<ul>";
-    ?>
+}
+echo "<ul>";
+?>
 </body>
 </html>

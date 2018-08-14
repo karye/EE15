@@ -1,13 +1,13 @@
 <?php
 /**
-* Hemsidan
-*
-* PHP version 5
-* @category   Webbtjänst
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Hemsidan
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <?php
 session_start();
@@ -22,7 +22,8 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Resedagboken för dom ressugna</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -36,13 +37,13 @@ if (!isset($_SESSION["loggedin"])) {
             <nav>
                 <ul>
                     <?php
-                    if (!$_SESSION["loggedin"]) {
-                        echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
-                        echo "<li><a class=\"aktuell\" href=\"skapa_konto.php\">Skapa konto</a></li>";
-                    } else {
-                        echo "<li><a class=\"aktuell\" href=\"min_sida.php\">Min sida</a></li>";
-                    }
-                    ?>
+if (!$_SESSION["loggedin"]) {
+    echo "<li><a href=\"#myModal\" class=\"trigger-btn\" data-toggle=\"modal\">Logga in</a></li>";
+    echo "<li><a class=\"aktuell\" href=\"skapa_konto.php\">Skapa konto</a></li>";
+} else {
+    echo "<li><a class=\"aktuell\" href=\"min_sida.php\">Min sida</a></li>";
+}
+?>
                     <li><a href="andras_resor.php">Andras resor</a></li>
                     <li>
                         <form>
@@ -96,11 +97,13 @@ if (!isset($_SESSION["loggedin"])) {
     </div>
 
     <?php
-    include "includes/inloggningsruta.php";
-    include "includes/frameworks.php";
-    ?>
-    <script src="js/confirm.js"></script>
-    <script src="js/login.js"></script>
+include "includes/inloggningsruta.php";
+include "includes/frameworks.php";
+?>
+    <script src="js/confirm.js">
+    </script>
+    <script src="js/login.js">
+    </script>
 </body>
 
 </html>

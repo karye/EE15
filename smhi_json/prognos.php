@@ -12,14 +12,17 @@
 ?>
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="utf-8">
     <title>SMHI prognos</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
+    </script>
 </head>
+
 <body>
-	<canvas id="canvas" width="800" height="450"></canvas>
-	<?php
+    <canvas id="canvas" width="800" height="450"></canvas>
+    <?php
 
 // Hämta data från tjänsten
 $url = "https://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/16/lat/58/data.json";
@@ -71,4 +74,5 @@ echo "<script>
 			</script>";
 ?>
 </body>
+
 </html>

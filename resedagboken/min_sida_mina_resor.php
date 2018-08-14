@@ -1,13 +1,13 @@
 <?php
 /**
-* Medlemssidan
-*
-* PHP version 5
-* @category   Webbtjänst
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Medlemssidan
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <?php
 session_start();
@@ -24,7 +24,8 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Resedagboken för dom ressugna</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -82,6 +83,7 @@ if (isset($_POST["registrera"])) {
     }
 }
 ?>
+
 <body>
     <div class="kontainer">
         <header>
@@ -101,7 +103,9 @@ if (isset($_POST["registrera"])) {
         </header>
         <main class="kolumner_minsida">
             <nav>
-                <h3><?php echo $_SESSION["anamn"] ?></h3>
+                <h3>
+                    <?php echo $_SESSION["anamn"] ?>
+                </h3>
                 <ul>
                     <li><a class="aktuell" href="min_sida.php">Mina resor</a></li>
                     <li><a href="min_sida_skapa_resa.php">Skapa resa</a></li>
@@ -126,34 +130,36 @@ if (isset($_POST["registrera"])) {
     </div>
 
     <script>
-    function initMap() {
-        var bounds = new google.maps.LatLngBounds();
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: {lat: 50, lng: 10}
-        });
-
-        // Multiple Markers
-        var markers = [
-            ['Paris', 48.864716, 2.349014],
-            ['London Eye, London', 51.503454,-0.119562],
-            ['Vienna', 48.210033, 16.363449]
-        ];
-
-        // Loop through our array of markers & place each one on the map
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0]
+        function initMap() {
+            var bounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: {
+                    lat: 50,
+                    lng: 10
+                }
             });
+
+            // Multiple Markers
+            var markers = [
+                ['Paris', 48.864716, 2.349014],
+                ['London Eye, London', 51.503454, -0.119562],
+                ['Vienna', 48.210033, 16.363449]
+            ];
+
+            // Loop through our array of markers & place each one on the map
+            for (i = 0; i < markers.length; i++) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: markers[i][0]
+                });
+            }
         }
-    }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNO9bd6B1_7SuSg7g7IxWeHtK9uHK3bA&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNO9bd6B1_7SuSg7g7IxWeHtK9uHK3bA&callback=initMap">
     </script>
 </body>
 

@@ -1,13 +1,13 @@
 <?php
 /**
-* Medlemssidan
-*
-* PHP version 5
-* @category   Webbtjänst
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Medlemssidan
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <?php
 session_start();
@@ -24,7 +24,8 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Resedagboken för dom ressugna</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -78,6 +79,7 @@ if (isset($_POST["publicera"])) {
     }
 }
 ?>
+
 <body>
     <div class="kontainer">
         <header>
@@ -97,7 +99,9 @@ if (isset($_POST["publicera"])) {
         </header>
         <main class="kolumner_minsida">
             <nav>
-                <h3><?php echo $_SESSION["anamn"] ?></h3>
+                <h3>
+                    <?php echo $_SESSION["anamn"] ?>
+                </h3>
                 <ul>
                     <li><a href="min_sida_mina_resor.php">Mina resor</a></li>
                     <li><a class="aktuell" href="min_sida_skapa_resa.php">Skapa resa</a></li>

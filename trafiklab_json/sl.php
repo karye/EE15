@@ -1,14 +1,14 @@
 <?php
 /**
-* Hämta data trafiklab
-*
-* @category   json data övning
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Hämta data trafiklab
+ *
+ * @category   json data övning
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
-<?php
+    <?php
 $SVAR = 100;
 $RADIUS = 1000;
 

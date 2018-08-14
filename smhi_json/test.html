@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="utf-8">
     <title>SMHI prognos</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <style media="screen">
         header {
             text-align: center;
-            background:#f6f0ef;
+            background: #f6f0ef;
             padding: 10px;
             font: 20px sans-serif;
         }
+
         main {
             width: 600px;
             margin: auto;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Chart.js</h1>
@@ -24,8 +27,8 @@
     <main>
         <canvas id="canvas" width="400" height="300"></canvas>
     </main>
-	<script>
-        window.onload = function() {
+    <script>
+        window.onload = function () {
             var config = {
                 type: 'line',
                 data: {
@@ -38,10 +41,11 @@
                     }]
                 }
             };
-			var canvas = document.getElementById('canvas');
-			var ctx = canvas.getContext('2d');
-			var myChart = new Chart(ctx, config);
-		};
-	</script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var myChart = new Chart(ctx, config);
+        };
+    </script>
 </body>
+
 </html>

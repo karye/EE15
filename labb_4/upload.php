@@ -11,11 +11,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="utf-8">
     <title>Enkel Filuppladdning</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <?php
 if (isset($_POST['submit'])) {
@@ -91,4 +93,5 @@ if (isset($_POST['submit'])) {
 }
 ?>
 </body>
+
 </html>

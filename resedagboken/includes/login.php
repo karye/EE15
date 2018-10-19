@@ -1,13 +1,13 @@
 <?php
 /**
- * Loginsida
- *
- * PHP version 5
- * @category   Webbtjänst
- * @author     Karim Ryde <karye.webb@gmail.com>
- * @license    PHP CC
- * @link
- */
+* Loginsida
+*
+* PHP version 5
+* @category   Webbtjänst
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+* @link
+*/
 ?>
 <?php
 session_start();
@@ -31,16 +31,16 @@ $losen = filter_input(INPUT_POST, "losen", FILTER_SANITIZE_STRING);
 
 // Om data finns
 if ($anamn && $losen) {
-
+    
     // Sök efter anvandare i tabellen
     $sql = "SELECT * FROM anvandare WHERE anamn = '$anamn'";
-
+    
     // Nu kör vi vår SQL
     $result = $conn->query($sql);
-
+    
     // Hämtar resultat från databassökningen
     $row = $result->fetch_assoc();
-
+    
     // Kollar om lösenordet stämmer med password_verify()
     if (password_verify($losen, $row['hash'])) {
         echo "Ja";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>SMHI prognos</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <style media="screen">
         header {
             text-align: center;
@@ -11,6 +11,7 @@
             padding: 10px;
             font: 20px sans-serif;
         }
+
         main {
             width: 600px;
             margin: auto;
@@ -24,24 +25,24 @@
     <main>
         <canvas id="canvas" width="400" height="300"></canvas>
     </main>
-	<script>
-	  	window.onload = function() {
-	  		var config = {
-	  			type: 'line',
-	  			data: {
-	  				labels: ['11:00:00', '12:00:00', '13:00:00'],
-	  				datasets: [{
-	  					data: [11, 9.9, 10.7],
-	  					label: 'SMHI prognos',
+    <script>
+        window.onload = function() {
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ['11:00:00', '12:00:00', '13:00:00'],
+                    datasets: [{
+                        data: [11, 9.9, 10.7],
+                        label: 'SMHI prognos',
                         borderColor: '#3e95cd',
-	  					fill: false
-	  				}]
-	  			}
-	  		};
-			var canvas = document.getElementById('canvas');
-			var ctx = canvas.getContext('2d');
-			var myChart = new Chart(ctx, config);
-		};
-	</script>
+                        fill: false
+                    }]
+                }
+            };
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var myChart = new Chart(ctx, config);
+        };
+    </script>
 </body>
 </html>

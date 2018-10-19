@@ -24,7 +24,8 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Resedagboken för dom ressugna</title>
     <link rel="stylesheet" href="styles/style.css">
@@ -43,28 +44,28 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST["publicera"])) {
-
+    
     // Tar emot data från formulär och rensar bort oönskade taggar eller kod
     $rnamn = filter_input(INPUT_POST, "rnamn", FILTER_SANITIZE_STRING);
     $rbeskrivning = filter_input(INPUT_POST, "rbeskrivning", FILTER_SANITIZE_STRING);
     $rlat = filter_input(INPUT_POST, "rlat", FILTER_SANITIZE_STRING);
     $rlng = filter_input(INPUT_POST, "rlng", FILTER_SANITIZE_STRING);
     $rprivat = filter_input(INPUT_POST, "rprivat", FILTER_SANITIZE_STRING);
-
+    
     // Översätt kryssrutans värde till true/false för att kunna lagras i tabellen
     $rkryss = ($rprivat) ? true : false;
-
+    
     // Om data finns skjut i databasen
     if ($rnamn && $rbeskrivning) {
-
+        
         // Registrera en ny resa
         $sql = "INSERT INTO resa
         (namn, beskrivning, lat, lng, privat) VALUES
         ('$rnamn', '$rbeskrivning', '$rlat', '$rlng', '$rkryss')";
-
+        
         // Nu kör vi vår SQL
         $result = $conn->query($sql);
-
+        
         // Gick det bra att köra SQL-kommandot?
         if (!$result) {
             die("<p>Det blev något fel i databasfrågan</p>");
@@ -72,12 +73,13 @@ if (isset($_POST["publicera"])) {
             echo "<p>Resan är registrerad!</p>";
             $_SESSION["rnamn"] = $rnamn;
         }
-
+        
         // Stänger ned anslutningen
         $conn->close();
     }
 }
 ?>
+
 <body>
     <div class="kontainer">
         <header>
@@ -97,7 +99,9 @@ if (isset($_POST["publicera"])) {
         </header>
         <main class="kolumner_minsida">
             <nav>
-                <h3><?php echo $_SESSION["anamn"] ?></h3>
+                <h3>
+                    <?php echo $_SESSION["anamn"] ?>
+                </h3>
                 <ul>
                     <li><a href="min_sida_mina_resor.php">Mina resor</a></li>
                     <li><a class="aktuell" href="min_sida_skapa_resa.php">Skapa resa</a></li>

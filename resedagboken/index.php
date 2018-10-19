@@ -57,12 +57,12 @@ if (!$_SESSION["loggedin"]) {
             <img src="images/mathew-schwartz-354703-unsplash.jpg" alt="Exempel på resa">
             <div>
                 <h2>På besök i ett tempel</h2>
-                <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid
-                    iceland drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb
-                    pour-over echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk.
-                    Portland cardigan single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage
-                    jianbing photo booth everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk
-                    hashtag slow-carb ennui. Direct trade chillwave vexillologist chicharrones gluten-free.</p>
+                <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid iceland
+                    drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb pour-over
+                    echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk. Portland cardigan
+                    single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage jianbing photo booth
+                    everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk hashtag slow-carb ennui.
+                    Direct trade chillwave vexillologist chicharrones gluten-free.</p>
             </div>
         </main>
         <footer class="kolumner">
@@ -80,7 +80,8 @@ if (!$_SESSION["loggedin"]) {
 include "includes/inloggningsruta.php";
 include "includes/frameworks.php";
 ?>
-    <script src="js/login.js"></script>
+    <script src="js/login.js">
+    </script>
 </body>
 
 </html>

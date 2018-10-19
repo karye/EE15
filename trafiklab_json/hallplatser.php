@@ -1,18 +1,16 @@
 <?php
 /**
-* Hämta data om närmsta hållplatser från trafiklab (SL)
-*
-* PHP version 7
-* @category   json övning
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-* API-dok     https://www.trafiklab.se/api/sl-narliggande-hallplatser/dokumentation
-* API-nyckel  5a04359da47042b7837f88a5c61908c9
-*/
-?>
+ * Hämta data om närmsta hållplatser från trafiklab (SL)
+ *
+ * PHP version 7
+ * @category   json övning
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ * API-dok     https://www.trafiklab.se/api/sl-narliggande-hallplatser/dokumentation
+ * API-nyckel  5a04359da47042b7837f88a5c61908c9
+ */
 
-<?php
 // Inställningar
 $SVAR = 50;
 $RADIUS = 1000;

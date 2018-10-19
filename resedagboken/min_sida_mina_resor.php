@@ -1,13 +1,13 @@
 <?php
 /**
-* Medlemssidan
-*
-* PHP version 5
-* @category   Webbtjänst
-* @author     Karim Ryde <karye.webb@gmail.com>
-* @license    PHP CC
-* @link
-*/
+ * Medlemssidan
+ *
+ * PHP version 5
+ * @category   Webbtjänst
+ * @author     Karim Ryde <karye.webb@gmail.com>
+ * @license    PHP CC
+ * @link
+ */
 ?>
 <?php
 session_start();

@@ -8,5 +8,5 @@
 /resedagboken/pass.txt
 /_*
 .tmp.drivedownload
-**/images/*
-**/mtrl/*
+**/images
+**/mtrl

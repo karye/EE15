@@ -67,12 +67,10 @@ if (!$_SESSION["loggedin"]) {
         </main>
         <footer class="kolumner">
             <div>
-                <h4>Info</h4>
-                <p>...</p>
+                <p>Info</p>
             </div>
             <div>
-                <h4>Kontakt</h4>
-                <p>...</p>
+                <p>Kontakt</p>
             </div>
         </footer>
     </div>

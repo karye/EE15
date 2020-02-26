@@ -54,7 +54,7 @@ if (!$_SESSION["loggedin"]) {
             </nav>
         </header>
         <main class="kolumner">
-            <img src="images/mathew-schwartz-354703-unsplash.jpg" alt="Exempel på resa">
+            <img src="./images/agustin-diaz-185846-unsplash.jpg" alt="Exempel på resa">
             <div>
                 <h2>På besök i ett tempel</h2>
                 <p>Lorem ipsum dolor amet literally flannel coloring book kickstarter 3 wolf moon pok pok. Polaroid iceland

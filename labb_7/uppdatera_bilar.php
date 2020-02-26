@@ -28,7 +28,7 @@
     $modell = filter_input(INPUT_POST, "modell", FILTER_SANITIZE_STRING);
 
     // Om data finns skjut i databasen
-    if ($reg && $marke && $modell) {
+if ($reg && $marke && $modell) {
 
         // Vi försöker öppna en anslutningen mot vår databas
         $conn = new mysqli($hostname, $user, $pass, $database);

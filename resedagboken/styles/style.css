@@ -13,14 +13,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 body {
-    background: url("../images/bg2.jpg");
+    background: url("../images/capturing-the-human-heart-528371-unsplash.jpg");
     background-size: cover;
 }
 
 .kontainer {
     font-family: 'Open Sans', sans-serif;
     width: 960px;
-    margin: auto;
+    margin: 50px auto;
 }
 
 header {
@@ -58,6 +58,7 @@ main {
 }
 main img {
     border: 25px solid #FFF;
+    width: 300px;
 }
 
 /* Utseende på formulär */

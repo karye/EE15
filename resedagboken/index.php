@@ -61,18 +61,15 @@ if (!$_SESSION["loggedin"]) {
                     drinking vinegar salvia keytar heirloom gentrify health goth hell of adaptogen edison bulb pour-over
                     echo park gluten-free master cleanse. Church-key prism irony authentic pitchfork kinfolk. Portland cardigan
                     single-origin coffee keytar coloring book, listicle bicycle rights kogi. Forage jianbing photo booth
-                    everyday carry ugh, readymade bushwick bicycle rights selvage sriracha kinfolk hashtag slow-carb ennui.
-                    Direct trade chillwave vexillologist chicharrones gluten-free.</p>
+                    everyday carry ugh.</p>
             </div>
         </main>
         <footer class="kolumner">
             <div>
-                <h4>Info</h4>
-                <p>...</p>
+                <p>Info</p>
             </div>
             <div>
-                <h4>Kontakt</h4>
-                <p>...</p>
+                <p>Kontakt</p>
             </div>
         </footer>
     </div>

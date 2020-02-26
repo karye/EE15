@@ -24,8 +24,9 @@ body {
 }
 
 header {
-    background: rgba(255, 127, 7, 0.8);
+    background: rgba(255, 127, 7, 0.9);
     padding: 15px 30px 30px 30px;
+    border-radius: 5px 5px 0 0;
 }
 header h1 {
     font-family: 'Patua One', sans-serif;
@@ -54,7 +55,7 @@ header nav a:hover, header nav a.aktuell {
 }
 
 main {
-    background: rgba(84, 211, 242, 0.76);
+    background: rgba(84, 211, 242, 0.9);
 }
 main img {
     border: 25px solid #FFF;
@@ -119,7 +120,8 @@ main #map {
 }
 
 footer {
-    background: rgba(255, 127, 7, 0.8);
+    background: rgba(255, 127, 7, 0.9);
+    border-radius: 0 0 5px 5px;
 }
 footer h4 {
     font-size: 20px;

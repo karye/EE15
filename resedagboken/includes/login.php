@@ -15,7 +15,7 @@ if (!isset($_SESSION["loggedin"])) {
     $_SESSION["loggedin"] = false;
 }
 
-include_once '../../../config_db/konfig_db_resedagboken.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . "/_databaser/konfig-db.php";
 
 // Vi försöker öppna en anslutningen mot vår databas
 $conn = new mysqli($hostname, $user, $password, $database);

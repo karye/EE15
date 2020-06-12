@@ -31,7 +31,7 @@ if (!isset($_SESSION["loggedin"])) {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <?php
-include '../../config_db/konfig_db_resedagboken.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . "/_databaser/konfig-db.php";
 
 /* Ta emot data från skapa_konto.php och lagra i databasen */
 /* Visa medlemssidan */
